@@ -6,10 +6,13 @@ readme = "README.md"
 authors = [
     { }
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.15"
 dependencies = [
+    "diffprivlib>=0.6.6,<0.7",
     "kagglehub",
+    "numpy",
     "pandas",
+    "smartnoise-synth>=1.0.8,<2",
 ]
 
 [tool.uv]
