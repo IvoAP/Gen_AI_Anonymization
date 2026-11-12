@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2300" height="1420" viewBox="0 0 2300 1420" role="img" aria-labelledby="title description">
+  <title id="title">Representa&#231;&#227;o latente para detec&#231;&#227;o bin&#225;ria de ataques</title>
+  <desc id="description">Diagrama com dados tabulares, encoder MLP, latentes, treinamento conjunto e atualiza&#231;&#227;o privada. Uma seta liga o encoder ao bloco de ru&#237;do e label. Sem a f&#243;rmula da perda conjunta e sem o rodap&#233; da vers&#227;o anterior.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#37474f"/>
+    </marker>
+    <marker id="orange-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#db7900"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", "DejaVu Sans", sans-serif; fill: #102331; text-anchor: middle; letter-spacing: 0; }
+      .title { font-size: 46px; font-weight: 600; }
+      .heading { font-size: 38px; font-weight: 600; }
+      .label { font-size: 35px; }
+      .small { font-size: 30px; }
+      .edge { fill: none; stroke: #37474f; stroke-width: 3.5; stroke-linejoin: round; marker-end: url(#arrow); }
+      .latent-edge { fill: none; stroke: #db7900; stroke-width: 3.5; marker-end: url(#orange-arrow); }
+      .box { stroke-width: 2.5; rx: 12; }
+    </style>
+  </defs>
+  <rect width="2300" height="1420" fill="white"/>
+  <text class="title" x="1150" y="66">Representa&#231;&#227;o latente para detec&#231;&#227;o bin&#225;ria de ataques</text>
+
+  <path class="edge" d="M 1880 380 V 210 H 1070"/>
+  <text class="small" x="1440" y="180">Gradientes da perda conjunta</text>
+  <path class="edge" d="M 810 320 V 540 H 625 V 760"/>
+  <text class="small" x="626" y="590">Atualiza o encoder</text>
+  <path class="edge" d="M 1070 275 H 2280 V 575 H 2200"/>
+  <text class="small" x="1700" y="312">Atualiza a MLP interna</text>
+
+  <rect class="box" x="550" y="110" width="520" height="210" fill="#e2c6ef" stroke="#9462b1"/>
+  <text class="heading" x="810" y="166">Atualiza&#231;&#227;o privada</text>
+  <text class="label" x="810" y="222">Clipping por registro</text>
+  <text class="label" x="810" y="275">+ ru&#237;do nos gradientes</text>
+
+  <text class="heading" x="195" y="592">Dados tabulares</text>
+  <text class="small" x="195" y="637">DDoS bin&#225;rio</text>
+  <rect class="box" x="45" y="680" width="300" height="520" fill="#b9e8c1" stroke="#698c73"/>
+  <path d="M 260 702 V 1178 M 65 940 H 325" fill="none" stroke="#698c73" stroke-width="3"/>
+  <text class="label" x="155" y="825">Features</text>
+  <text x="300" y="840" style="font-size:64px">1</text>
+  <text class="label" x="155" y="1080">Features</text>
+  <text x="300" y="1095" style="font-size:64px">0</text>
+  <text class="small" x="195" y="1250">Pr&#233;-processamento</text>
+  <text class="small" x="195" y="1295">fixo por registro</text>
+  <path class="edge" d="M 345 880 H 460"/>
+
+  <rect class="box" x="460" y="760" width="330" height="240" fill="#afd9f1" stroke="#58778b"/>
+  <text class="heading" x="625" y="835">Encoder</text>
+  <text class="heading" x="625" y="885">MLP</text>
+  <text class="small" x="625" y="953">M&#233;dia e vari&#226;ncia</text>
+
+  <path class="edge" d="M 625 1000 V 1080"/>
+  <rect class="box" x="460" y="1080" width="330" height="190" fill="#f2f5f6" stroke="#90a1ac"/>
+  <text class="small" x="625" y="1130">Ru&#237;do + label</text>
+  <text class="small" x="625" y="1183">Prior condicional</text>
+  <text class="small" x="625" y="1236">fixo por classe</text>
+
+  <text class="heading" x="1150" y="597">Espa&#231;o latente</text>
+  <rect class="box" x="940" y="640" width="420" height="240" fill="#9ce9d2" stroke="#d88722"/>
+  <text class="small" x="1150" y="711">Representa&#231;&#227;o</text>
+  <text class="small" x="1150" y="764">do registro real</text>
+  <text class="small" x="1150" y="832">Amostragem no treino</text>
+  <path class="latent-edge" d="M 790 880 L 940 760"/>
+
+  <text class="heading" x="1150" y="1035">Latente sint&#233;tico</text>
+  <rect class="box" x="940" y="1080" width="420" height="190" fill="#48c9a7" stroke="#d88722"/>
+  <text class="small" x="1150" y="1160">Novas amostras</text>
+  <text class="small" x="1150" y="1215">para avalia&#231;&#227;o</text>
+  <text class="small" x="1150" y="1320">Sem registro real na gera&#231;&#227;o</text>
+  <path class="latent-edge" d="M 790 1175 H 940"/>
+  <path class="edge" d="M 1360 760 L 1510 850"/>
+  <path class="edge" d="M 1360 1175 L 1510 920"/>
+
+  <rect class="box" x="1510" y="380" width="740" height="925" fill="#fffcfc" stroke="#eb5757"/>
+  <text class="heading" x="1880" y="441">Treinamento conjunto</text>
+
+  <rect class="box" x="1560" y="480" width="640" height="190" fill="#f5cbcb" stroke="#bf6262"/>
+  <text class="heading" x="1880" y="537">Classificador MLP interno</text>
+  <text class="small" x="1880" y="589">Predi&#231;&#227;o de ataque / normal</text>
+  <text class="small" x="1880" y="639">Perda de classifica&#231;&#227;o: BCE</text>
+
+  <rect class="box" x="1560" y="730" width="640" height="200" fill="#f5cbcb" stroke="#bf6262"/>
+  <text class="heading" x="1880" y="789">Regulariza&#231;&#227;o KL</text>
+  <text class="small" x="1880" y="844">Posterior do encoder versus</text>
+  <text class="small" x="1880" y="896">prior condicional fixo</text>
+
+  <rect class="box" x="1560" y="990" width="640" height="220" fill="#f5cbcb" stroke="#bf6262"/>
+  <text class="heading" x="1880" y="1052">Regulariza&#231;&#227;o geom&#233;trica</text>
+  <text class="small" x="1880" y="1112">Dist&#226;ncias a &#226;ncoras fixas</text>
+  <text class="small" x="1880" y="1169">Features reais versus m&#233;dia latente</text>
+</svg>
